@@ -22,13 +22,13 @@ public class Questao4 {
             System.out.print(num + " ");
         }
 
-        System.out.print("\nInsira o valor de um elemento valor para deleção: ");
+        System.out.print("\nInsira o valor de um elemento para deleção: ");
         boolean rightNumber = false;
         int val = 0;
         while (!rightNumber){
             var num = ler.nextInt();
             if(!list.contains(num)) {
-                System.out.print("Insira um elemento válido: ");
+                System.out.print("Insira um elemento valido: ");
             }else{
                 rightNumber = true;
                 val = num;
