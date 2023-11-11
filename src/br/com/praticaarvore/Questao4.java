@@ -16,18 +16,19 @@ public class Questao4 {
         System.out.println("Arvore original");
         arv.imprimir();
 
-        System.out.print("Escolha um desses números para deletar: ");
-        var list = arv.nums;
+        System.out.print("Elementos da arvore: ");
+        var list = arv.elementos;
         for (int num : list) {
             System.out.print(num + " ");
         }
-        System.out.print("\nInsira um valor: ");
+
+        System.out.print("\nInsira o valor de um elemento valor para deleção: ");
         boolean rightNumber = false;
         int val = 0;
         while (!rightNumber){
             var num = ler.nextInt();
             if(!list.contains(num)) {
-                System.out.print("Insira um valor válido: ");
+                System.out.print("Insira um elemento válido: ");
             }else{
                 rightNumber = true;
                 val = num;

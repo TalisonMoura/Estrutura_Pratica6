@@ -20,9 +20,9 @@ public class Arvore {
         NumerosInseridos(valor);
     }
 
-    List<Integer> nums = new ArrayList<>();
+    List<Integer> elementos = new ArrayList<>();
     public void NumerosInseridos(int value){
-        nums.add(value);
+        elementos.add(value);
     }
 
     private No inserirRecursivo(No node, int valor) {
