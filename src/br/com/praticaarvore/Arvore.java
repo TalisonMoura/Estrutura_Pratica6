@@ -98,11 +98,11 @@ public class Arvore {
         return node;
     }
 
-    private int minValue(No root) {
-        int minValue = root.valor;
-        while (root.esquerda != null) {
-            minValue = root.esquerda.valor;
-            root = root.esquerda;
+    private int minValue(No node) {
+        int minValue = node.valor;
+        while (node.esquerda != null) {
+            minValue = node.esquerda.valor;
+            node = node.esquerda;
         }
         return minValue;
     }
