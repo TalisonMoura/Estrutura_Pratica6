@@ -5,7 +5,7 @@ public class Main {
         Questao4 q4 = new Questao4();
         Questao5 q5 = new Questao5();
 
-        q4.DeletarElemento(7);
-        q5.ImprimirInPrePos();
+        q4.DeletarElemento();
+        //q5.ImprimirInPrePos();
     }
 }

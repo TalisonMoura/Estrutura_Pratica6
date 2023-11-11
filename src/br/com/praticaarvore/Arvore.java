@@ -1,5 +1,7 @@
 package br.com.praticaarvore;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 public class Arvore {
@@ -15,6 +17,12 @@ public class Arvore {
 
     public void inserir(int valor) {
         raiz = inserirRecursivo(raiz, valor);
+        NumerosInseridos(valor);
+    }
+
+    List<Integer> nums = new ArrayList<>();
+    public void NumerosInseridos(int value){
+        nums.add(value);
     }
 
     private No inserirRecursivo(No node, int valor) {

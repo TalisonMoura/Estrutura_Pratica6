@@ -1,8 +1,11 @@
 package br.com.praticaarvore;
 
+import java.util.Scanner;
+
 public class Questao4 {
     Arvore arv = new Arvore();
-    public void DeletarElemento(int value) {
+    Scanner ler = new Scanner(System.in);
+    public void DeletarElemento() {
         arv.inserir(10);
         arv.inserir(5);
         arv.inserir(15);
@@ -13,9 +16,27 @@ public class Questao4 {
         System.out.println("Arvore original");
         arv.imprimir();
 
-        arv.delete(value);
+        System.out.print("Escolha um desses números para deletar: ");
+        var list = arv.nums;
+        for (int num : list) {
+            System.out.print(num + " ");
+        }
+        System.out.print("\nInsira um valor: ");
+        boolean rightNumber = false;
+        int val = 0;
+        while (!rightNumber){
+            var num = ler.nextInt();
+            if(!list.contains(num)) {
+                System.out.print("Insira um valor válido: ");
+            }else{
+                rightNumber = true;
+                val = num;
+            }
+        }
 
-        System.out.println("Arvore com o elemento deletado");
+        arv.delete(val);
+
+        System.out.println(String.format("\nArvore com o elemento %d deletado", val));
         arv.imprimir();
     }
 }
