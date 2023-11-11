@@ -6,6 +6,6 @@ public class Main {
         Questao5 q5 = new Questao5();
 
         q4.DeletarElemento(7);
-
+        q5.ImprimirInPrePos();
     }
 }

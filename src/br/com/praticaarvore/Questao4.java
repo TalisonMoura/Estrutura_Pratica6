@@ -2,7 +2,6 @@ package br.com.praticaarvore;
 
 public class Questao4 {
     Arvore arv = new Arvore();
-    No root;
     public void DeletarElemento(int value) {
         arv.inserir(10);
         arv.inserir(5);
@@ -12,6 +11,8 @@ public class Questao4 {
         arv.inserir(12);
 
         System.out.println("Arvore original");
+        arv.imprimir();
+
         arv.delete(value);
 
         System.out.println("Arvore com o elemento deletado");

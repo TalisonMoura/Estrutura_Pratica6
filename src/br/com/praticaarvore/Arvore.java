@@ -1,5 +1,7 @@
 package br.com.praticaarvore;
 
+import java.util.Stack;
+
 public class Arvore {
     private No raiz;
 
@@ -20,7 +22,6 @@ public class Arvore {
             node = new No(valor);
             return node;
         }
-
         if (valor < node.valor) {
             node.esquerda = inserirRecursivo(node.esquerda, valor);
         } else if (valor > node.valor) {
@@ -96,5 +97,54 @@ public class Arvore {
             root = root.esquerda;
         }
         return minValue;
+    }
+
+    public void inOrder() {
+        inOrderRec(raiz);
+    }
+
+    private void inOrderRec(No node) {
+        if (node != null) {
+            inOrderRec(node.esquerda);
+            System.out.print(node.valor + " ");
+            inOrderRec(node.direita);
+        }
+    }
+
+    public void preOrder() {
+        preOrderIterative(raiz);
+    }
+
+    private void preOrderIterative(No node) {
+        if (node == null) {
+            return;
+        }
+
+        Stack<No> stack = new Stack<>();
+        stack.push(node);
+
+        while (!stack.isEmpty()) {
+            No current = stack.pop();
+            System.out.print(current.valor + " ");
+
+            if (current.direita != null) {
+                stack.push(current.direita);
+            }
+            if (current.esquerda != null) {
+                stack.push(current.esquerda);
+            }
+        }
+    }
+
+    public void postOrder() {
+        postOrderRec(raiz);
+    }
+
+    private void postOrderRec(No node) {
+        if (node != null) {
+            postOrderRec(node.esquerda);
+            postOrderRec(node.direita);
+            System.out.print(node.valor + " ");
+        }
     }
 }
